@@ -132,10 +132,22 @@ class $AssetsImagesGen {
       ];
 }
 
+class $AssetsLogoGen {
+  const $AssetsLogoGen();
+
+  /// File path: assets/logo/galleryAppLogo.png
+  AssetGenImage get galleryAppLogo =>
+      const AssetGenImage('assets/logo/galleryAppLogo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [galleryAppLogo];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLogoGen logo = $AssetsLogoGen();
 }
 
 class AssetGenImage {

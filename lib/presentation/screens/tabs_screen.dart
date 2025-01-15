@@ -16,7 +16,7 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Navigator(
-        key: GlobalKey<NavigatorState>(), // Separate Navigator für jeden Tab
+        key: GlobalKey<NavigatorState>(),
         onGenerateRoute: (RouteSettings settings) {
           switch (_selectedIndex) {
             case 0:
