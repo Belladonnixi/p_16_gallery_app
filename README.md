@@ -1,4 +1,4 @@
-# p_16_gallery_app
+# P16 Gallery App
 
 ## Ziel
 
