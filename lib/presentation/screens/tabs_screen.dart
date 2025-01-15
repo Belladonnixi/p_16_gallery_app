@@ -12,15 +12,28 @@ class TabsScreen extends StatefulWidget {
 class _TabsScreenState extends State<TabsScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
-    const GalleryScreen(),
-    const AboutMeScreen(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex],
+      body: Navigator(
+        key: GlobalKey<NavigatorState>(), // Separate Navigator für jeden Tab
+        onGenerateRoute: (RouteSettings settings) {
+          switch (_selectedIndex) {
+            case 0:
+              return MaterialPageRoute(
+                builder: (context) => const GalleryScreen(),
+              );
+            case 1:
+              return MaterialPageRoute(
+                builder: (context) => const AboutMeScreen(),
+              );
+            default:
+              return MaterialPageRoute(
+                builder: (context) => const GalleryScreen(),
+              );
+          }
+        },
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
