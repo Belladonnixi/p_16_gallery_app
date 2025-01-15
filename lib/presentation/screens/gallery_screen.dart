@@ -2,21 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/data/gallery_data.dart';
 import 'package:p_16_gallery_app/presentation/widgets/gallery_item_card.dart';
 
-class GalleryScreen extends StatelessWidget {
+class GalleryScreen extends StatefulWidget {
   const GalleryScreen({super.key});
+
+  @override
+  State<GalleryScreen> createState() => _GalleryScreenState();
+}
+
+class _GalleryScreenState extends State<GalleryScreen> {
+  String _appBarTitle = 'MyGallery';
+
+  void _toggleAppBarTitle() {
+    setState(() {
+      _appBarTitle = _appBarTitle == 'MyGallery' ? 'Details' : 'MyGallery';
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'MyGallery',
+        title: Text(
+          _appBarTitle,
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -28,7 +42,10 @@ class GalleryScreen extends StatelessWidget {
         itemCount: galleryData.length,
         itemBuilder: (context, index) {
           final image = galleryData[index];
-          return GalleryItemCard(image: image);
+          return GalleryItemCard(
+            image: image,
+            onShowDetails: _toggleAppBarTitle,
+          );
         },
       ),
     );

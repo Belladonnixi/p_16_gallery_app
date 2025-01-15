@@ -1,18 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/model/gallery_item.dart';
+import 'package:p_16_gallery_app/presentation/widgets/gallery_item_details.dart';
 
 class GalleryItemCard extends StatelessWidget {
   const GalleryItemCard({
     super.key,
     required this.image,
+    required this.onShowDetails,
   });
 
   final GalleryItem image;
+  final VoidCallback onShowDetails;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        onShowDetails();
+        showBottomSheet(
+          context: context,
+          builder: (context) => GalleryItemDetails(item: image),
+        ).closed.then((_) {
+          onShowDetails();
+        });
+      },
       child: Card(
         elevation: 4,
         clipBehavior: Clip.antiAlias,
