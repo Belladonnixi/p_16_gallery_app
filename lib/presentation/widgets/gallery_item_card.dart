@@ -49,7 +49,11 @@ class GalleryItemCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 image.imageTitle,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).brightness == Brightness.light
+                    ? Theme.of(context).textTheme.bodyMedium!.copyWith(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        )
+                    : Theme.of(context).textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
             ),

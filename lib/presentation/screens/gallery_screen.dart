@@ -24,13 +24,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
       appBar: AppBar(
         title: Text(
           _appBarTitle,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
         ),
-        backgroundColor: Theme.of(context).primaryColor,
-        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

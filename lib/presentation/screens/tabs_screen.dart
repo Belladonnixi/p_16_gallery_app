@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/presentation/screens/about_me_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/gallery_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class TabsScreen extends StatefulWidget {
+  const TabsScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<TabsScreen> createState() => _TabsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TabsScreenState extends State<TabsScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
@@ -28,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
             _selectedIndex = index;
           });
         },
-        iconSize: 30,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const [
