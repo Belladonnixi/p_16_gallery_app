@@ -14,6 +14,8 @@ class GalleryItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return GestureDetector(
       onTap: () {
         onShowDetails();
@@ -25,7 +27,7 @@ class GalleryItemCard extends StatelessWidget {
         });
       },
       child: Card(
-        elevation: 4,
+        elevation: isDarkMode ? 0 : 2,
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),

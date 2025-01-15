@@ -12,49 +12,123 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/basketball_1.jpeg
-  AssetGenImage get basketball1 =>
-      const AssetGenImage('assets/images/basketball_1.jpeg');
+  /// File path: assets/images/andyFeliciotti.jpg
+  AssetGenImage get andyFeliciotti =>
+      const AssetGenImage('assets/images/andyFeliciotti.jpg');
 
-  /// File path: assets/images/basketball_2.jpeg
-  AssetGenImage get basketball2 =>
-      const AssetGenImage('assets/images/basketball_2.jpeg');
+  /// File path: assets/images/caseyHorner.jpg
+  AssetGenImage get caseyHorner =>
+      const AssetGenImage('assets/images/caseyHorner.jpg');
 
-  /// File path: assets/images/bike.jpeg
-  AssetGenImage get bike => const AssetGenImage('assets/images/bike.jpeg');
+  /// File path: assets/images/clementM.jpg
+  AssetGenImage get clementM =>
+      const AssetGenImage('assets/images/clementM.jpg');
 
-  /// File path: assets/images/kaya.jpeg
-  AssetGenImage get kaya => const AssetGenImage('assets/images/kaya.jpeg');
+  /// File path: assets/images/craigStrahorn.jpg
+  AssetGenImage get craigStrahorn =>
+      const AssetGenImage('assets/images/craigStrahorn.jpg');
 
-  /// File path: assets/images/running.jpeg
-  AssetGenImage get running =>
-      const AssetGenImage('assets/images/running.jpeg');
+  /// File path: assets/images/damianoBaschiera.jpg
+  AssetGenImage get damianoBaschiera =>
+      const AssetGenImage('assets/images/damianoBaschiera.jpg');
 
-  /// File path: assets/images/ski.jpeg
-  AssetGenImage get ski => const AssetGenImage('assets/images/ski.jpeg');
+  /// File path: assets/images/danielMalikyar.jpg
+  AssetGenImage get danielMalikyar =>
+      const AssetGenImage('assets/images/danielMalikyar.jpg');
 
-  /// File path: assets/images/soccer.jpeg
-  AssetGenImage get soccer => const AssetGenImage('assets/images/soccer.jpeg');
+  /// File path: assets/images/danielRoe.jpg
+  AssetGenImage get danielRoe =>
+      const AssetGenImage('assets/images/danielRoe.jpg');
 
-  /// File path: assets/images/tennis_1.jpeg
-  AssetGenImage get tennis1 =>
-      const AssetGenImage('assets/images/tennis_1.jpeg');
+  /// File path: assets/images/danielaKokina.jpg
+  AssetGenImage get danielaKokina =>
+      const AssetGenImage('assets/images/danielaKokina.jpg');
 
-  /// File path: assets/images/tennis_2.jpeg
-  AssetGenImage get tennis2 =>
-      const AssetGenImage('assets/images/tennis_2.jpeg');
+  /// File path: assets/images/dominikSchroder.jpg
+  AssetGenImage get dominikSchroder =>
+      const AssetGenImage('assets/images/dominikSchroder.jpg');
+
+  /// File path: assets/images/florianVanDuyn.jpg
+  AssetGenImage get florianVanDuyn =>
+      const AssetGenImage('assets/images/florianVanDuyn.jpg');
+
+  /// File path: assets/images/jeremyBishop.jpg
+  AssetGenImage get jeremyBishop =>
+      const AssetGenImage('assets/images/jeremyBishop.jpg');
+
+  /// File path: assets/images/johannesAndersson.jpg
+  AssetGenImage get johannesAndersson =>
+      const AssetGenImage('assets/images/johannesAndersson.jpg');
+
+  /// File path: assets/images/jonathanBean.jpg
+  AssetGenImage get jonathanBean =>
+      const AssetGenImage('assets/images/jonathanBean.jpg');
+
+  /// File path: assets/images/kimonMaritz.jpg
+  AssetGenImage get kimonMaritz =>
+      const AssetGenImage('assets/images/kimonMaritz.jpg');
+
+  /// File path: assets/images/linusNylund.jpg
+  AssetGenImage get linusNylund =>
+      const AssetGenImage('assets/images/linusNylund.jpg');
+
+  /// File path: assets/images/quentinZwzeo.jpg
+  AssetGenImage get quentinZwzeo =>
+      const AssetGenImage('assets/images/quentinZwzeo.jpg');
+
+  /// File path: assets/images/rayHennessy.jpg
+  AssetGenImage get rayHennessy =>
+      const AssetGenImage('assets/images/rayHennessy.jpg');
+
+  /// File path: assets/images/sebastianBoring.jpg
+  AssetGenImage get sebastianBoring =>
+      const AssetGenImage('assets/images/sebastianBoring.jpg');
+
+  /// File path: assets/images/shifaazShamoon.jpg
+  AssetGenImage get shifaazShamoon =>
+      const AssetGenImage('assets/images/shifaazShamoon.jpg');
+
+  /// File path: assets/images/simonBerger.jpg
+  AssetGenImage get simonBerger =>
+      const AssetGenImage('assets/images/simonBerger.jpg');
+
+  /// File path: assets/images/simonFitall.jpg
+  AssetGenImage get simonFitall =>
+      const AssetGenImage('assets/images/simonFitall.jpg');
+
+  /// File path: assets/images/tomBarrett.jpg
+  AssetGenImage get tomBarrett =>
+      const AssetGenImage('assets/images/tomBarrett.jpg');
+
+  /// File path: assets/images/urbanVintage.jpg
+  AssetGenImage get urbanVintage =>
+      const AssetGenImage('assets/images/urbanVintage.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        basketball1,
-        basketball2,
-        bike,
-        kaya,
-        running,
-        ski,
-        soccer,
-        tennis1,
-        tennis2
+        andyFeliciotti,
+        caseyHorner,
+        clementM,
+        craigStrahorn,
+        damianoBaschiera,
+        danielMalikyar,
+        danielRoe,
+        danielaKokina,
+        dominikSchroder,
+        florianVanDuyn,
+        jeremyBishop,
+        johannesAndersson,
+        jonathanBean,
+        kimonMaritz,
+        linusNylund,
+        quentinZwzeo,
+        rayHennessy,
+        sebastianBoring,
+        shifaazShamoon,
+        simonBerger,
+        simonFitall,
+        tomBarrett,
+        urbanVintage
       ];
 }
 

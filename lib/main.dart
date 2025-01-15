@@ -1,9 +1,16 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:p_16_gallery_app/core/style/theme.dart';
 import 'package:p_16_gallery_app/presentation/screens/home_screen.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]).then((_) {
+    runApp(MainApp());
+  });
 }
 
 class MainApp extends StatelessWidget {
@@ -13,13 +20,18 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 10, 91, 111),
-        ),
-        textTheme: GoogleFonts.urbanistTextTheme(),
+      theme: FlexThemeData.light(
+        colors: natureTheme.light,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 2,
       ),
-      home: HomeScreen(),
+      darkTheme: FlexThemeData.dark(
+        colors: natureTheme.dark,
+        surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        blendLevel: 2,
+      ),
+      themeMode: ThemeMode.system,
+      home: const HomeScreen(),
     );
   }
 }
