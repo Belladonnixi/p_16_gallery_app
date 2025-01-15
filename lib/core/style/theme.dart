@@ -5,23 +5,23 @@ ThemeData getLightTheme() {
   return ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: NatureThemeColors.primaryLight,
+      seedColor: NatureThemeColors.skyBlueLight,
       brightness: Brightness.light,
-      primary: NatureThemeColors.primaryLight,
-      primaryContainer: NatureThemeColors.primaryContainerLight,
-      secondary: NatureThemeColors.secondaryLight,
-      secondaryContainer: NatureThemeColors.secondaryContainerLight,
-      tertiary: NatureThemeColors.tertiaryLight,
-      tertiaryContainer: NatureThemeColors.tertiaryContainerLight,
-      surface: NatureThemeColors.surfaceLight,
+      primary: NatureThemeColors.skyBlueLight,
+      primaryContainer: NatureThemeColors.mistyBlueLight,
+      secondary: NatureThemeColors.forestGreenLight,
+      secondaryContainer: NatureThemeColors.softSandLight,
+      tertiary: NatureThemeColors.rusticRedLight,
+      tertiaryContainer: NatureThemeColors.paleStoneLight,
+      surface: NatureThemeColors.cloudyWhiteLight,
     ),
-    scaffoldBackgroundColor: NatureThemeColors.scaffoldBackgroundLight,
+    scaffoldBackgroundColor: NatureThemeColors.naturalCanvasLight,
     appBarTheme: AppBarTheme(
       backgroundColor:
-          NatureThemeColors.primaryLight.withAlpha(((0.95 * 255).toInt())),
+          NatureThemeColors.skyBlueLight.withAlpha(((0.95 * 255).toInt())),
       elevation: 1,
       shadowColor:
-          NatureThemeColors.primaryLight.withAlpha(((0.5 * 255).toInt())),
+          NatureThemeColors.skyBlueLight.withAlpha(((0.5 * 255).toInt())),
       titleTextStyle: const TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -30,16 +30,16 @@ ThemeData getLightTheme() {
       foregroundColor: Colors.white,
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: NatureThemeColors.surfaceLight,
-      selectedItemColor: NatureThemeColors.primaryLight,
+      backgroundColor: NatureThemeColors.cloudyWhiteLight,
+      selectedItemColor: NatureThemeColors.skyBlueLight,
       unselectedItemColor:
-          NatureThemeColors.primaryLight.withAlpha(((0.6 * 255).toInt())),
+          NatureThemeColors.skyBlueLight.withAlpha(((0.6 * 255).toInt())),
       selectedLabelStyle:
           const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
       unselectedLabelStyle: const TextStyle(fontSize: 12),
     ),
     iconTheme: const IconThemeData(
-      color: NatureThemeColors.primaryLight,
+      color: NatureThemeColors.skyBlueLight,
     ),
     textTheme: const TextTheme(
       displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -54,8 +54,8 @@ ThemeData getLightTheme() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: NatureThemeColors.primaryContainerLight,
-        foregroundColor: NatureThemeColors.primaryLight,
+        backgroundColor: NatureThemeColors.mistyBlueLight,
+        foregroundColor: NatureThemeColors.skyBlueLight,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -74,20 +74,20 @@ ThemeData getDarkTheme() {
   return ThemeData(
     useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: NatureThemeColors.primaryDark,
+      seedColor: NatureThemeColors.twilightBlueDark,
       brightness: Brightness.dark,
-      primary: NatureThemeColors.primaryDark,
-      primaryContainer: NatureThemeColors.primaryContainerDark,
-      secondary: NatureThemeColors.secondaryDark,
-      secondaryContainer: NatureThemeColors.secondaryContainerDark,
-      tertiary: NatureThemeColors.tertiaryDark,
-      tertiaryContainer: NatureThemeColors.tertiaryContainerDark,
-      surface: NatureThemeColors.surfaceDark,
-      onSurface: Colors.grey[300], // Text auf Oberflächen
+      primary: NatureThemeColors.twilightBlueDark,
+      primaryContainer: NatureThemeColors.midnightBlueDark,
+      secondary: NatureThemeColors.mossGreenDark,
+      secondaryContainer: NatureThemeColors.deepForestDark,
+      tertiary: NatureThemeColors.mutedRoseDark,
+      tertiaryContainer: NatureThemeColors.slateGrayDark,
+      surface: NatureThemeColors.charcoalDark,
+      onSurface: Colors.grey[300],
     ),
-    scaffoldBackgroundColor: NatureThemeColors.scaffoldBackgroundDark,
+    scaffoldBackgroundColor: NatureThemeColors.shadowCanvasDark,
     appBarTheme: const AppBarTheme(
-      backgroundColor: NatureThemeColors.appBarColorDark,
+      backgroundColor: NatureThemeColors.evergreenDark,
       foregroundColor: Colors.white,
       elevation: 0,
       titleTextStyle: TextStyle(
@@ -113,9 +113,8 @@ ThemeData getDarkTheme() {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor:
-            NatureThemeColors.secondaryContainerDark, // Dezent dunkler Button
-        foregroundColor: NatureThemeColors.secondaryDark, // Textfarbe
+        backgroundColor: NatureThemeColors.deepForestDark,
+        foregroundColor: NatureThemeColors.mossGreenDark,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
