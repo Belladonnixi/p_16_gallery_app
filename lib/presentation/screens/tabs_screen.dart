@@ -28,6 +28,7 @@ class _TabsScreenState extends State<TabsScreen> {
             _selectedIndex = index;
           });
         },
+        iconSize: 28,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const [
