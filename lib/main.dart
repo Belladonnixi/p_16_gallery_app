@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:p_16_gallery_app/presentation/screens/gallery_screen.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,11 +19,7 @@ class MainApp extends StatelessWidget {
         ),
         textTheme: GoogleFonts.urbanistTextTheme(),
       ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: GalleryScreen(),
     );
   }
 }
