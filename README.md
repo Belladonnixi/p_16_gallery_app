@@ -33,8 +33,8 @@ Die Basis der Entwicklung sind die Screenshots in den bereitgestellten Slides. D
 
 ## UI 
 
-# LightMode:
+### LightMode:
 ![Screenshot 2025-01-16 at 14 40 52](https://github.com/user-attachments/assets/43ae9a40-9a2c-4142-97b4-9fb4815a8c41)
 
-# DarkMode
+### DarkMode
 ![Screenshot 2025-01-16 at 14 42 13](https://github.com/user-attachments/assets/aeb98317-7b7a-4038-b61b-df41dbf51749)
