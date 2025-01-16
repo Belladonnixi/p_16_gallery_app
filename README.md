@@ -42,10 +42,12 @@ Und ja ich weiß konsequenter weise hätte ich die Bilder dann besser auch als u
 ## UI 
 
 ### LightMode:
-![Screenshot 2025-01-16 at 14 40 52](https://github.com/user-attachments/assets/43ae9a40-9a2c-4142-97b4-9fb4815a8c41)
+
+<img width="898" alt="Screenshot 2025-01-17 at 00 26 30" src="https://github.com/user-attachments/assets/872f895f-4a70-4327-8651-a87ff614e52f" />
 
 ### DarkMode
-![Screenshot 2025-01-16 at 14 42 13](https://github.com/user-attachments/assets/aeb98317-7b7a-4038-b61b-df41dbf51749)
+
+<img width="829" alt="Screenshot 2025-01-17 at 00 24 44" src="https://github.com/user-attachments/assets/3c8d8981-cb30-4724-a5f5-c3339f4ed2eb" />
 
 
 ### Fazit
