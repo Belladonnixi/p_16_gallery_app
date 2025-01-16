@@ -36,13 +36,8 @@ class GalleryItemCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: ClipRRect(
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(16),
-                ),
-                child: image.imagePath.image(
-                  fit: BoxFit.cover,
-                ),
+              child: image.imagePath.image(
+                fit: BoxFit.cover,
               ),
             ),
             Padding(
