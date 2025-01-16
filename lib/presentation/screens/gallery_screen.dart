@@ -21,7 +21,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   // Datenrepository, um die Galerie-Daten zu laden
   // MockDatabaseRepository(errorType: MockErrorType.none) ist im Standard bereits gesetzt
   final DatabaseRepository _repository =
-      MockDatabaseRepository(errorType: MockErrorType.networkError);
+      MockDatabaseRepository(/* errorType: MockErrorType.networkError */);
 
   // Future, das die geladenen Galerie-Daten enthält
   late Future<List<GalleryItem>> _galleryData;
