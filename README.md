@@ -22,9 +22,14 @@ Die Basis der Entwicklung sind die Screenshots in den bereitgestellten Slides. D
 
 ## Lösung
 
+Ich habe es klein gelassen und Daten und Bilder geändert und darüber das Topic geändert ohne jetzt komplett ohne Designvorlauf da etwas völlig anderes daraus zu machen. Deshalb habe ich das Grundkonzept beibehalten bisher auch nicht wirklich Feature mäßig erweitert eine klassische Favoriten Sache wäre jetzt noch denkbar auf aktuellem Stand ging es mir darum Usabillity so weit glatt zu ziehen wie eben mit Fehleranzeigen wenn ein Laden der Daten nicht möglich sein sollte usw. um mich auch damit wieder mehr zu befassen.
+Hübsche bunte Dinge im UI sind toll, damit es rund ist gehört mehr dazu. Und in den meisten Fällen ist die DB eben nicht on Board sondern außen, deshalb habe ich diesen Passus drauf gesetzt.
+
+
 - erweitert um Theming und Dark & Light Mode (dafür das ich das quasi on the run gemacht habe, gar nicht mal so schlecht, aber auch nicht sonst wie gut)
 - Bilder geändert und Daten (Dabei das ist ein guter AI task Bilder von unsplash und sich Dinge wie Titel zu den Bildern , Descriptions und Datum jeweils generieren       lassen)
 - Databserepository mit MockDatabaseRepository genutzt, Spaßeshalber mal wieder da ein Delay eingebaut
+- Fehlerzustände beim Laden der Daten getestet (manuell) dafür aber entsprechend das MockDatabaseRepository dafür angepasst und auch den Gallery Screen
 - pull to refresh in der Gallery
 - ich bin aber im Flutter Standard geblieben und habe kein weiteres StateManagement benutzt
 - SplashScreen zugefügt
@@ -40,3 +45,8 @@ Die Basis der Entwicklung sind die Screenshots in den bereitgestellten Slides. D
 
 ### DarkMode
 ![Screenshot 2025-01-16 at 14 42 13](https://github.com/user-attachments/assets/aeb98317-7b7a-4038-b61b-df41dbf51749)
+
+
+# Fazit
+Wenigstens ein kleines, ich weiß so schon wieder absolut warum ich das arbeiten mit State Management Lösungen weit mehr bevorzuge tatsächlich. Bei so etwas sehr kleinem geht es noch, aber das man auf der Ebene Logik und View in einem hat, finde ich unangenehm unübersichtlich.
+Ich baue definitiv nichts mehr ohne State Management wodurch ich einfach eine saubere Kapselung von Logig und View haben kann. Und viel größer als so möchte ich das auch nicht bauen, genau deshalb.
