@@ -16,11 +16,12 @@ class GalleryScreen extends StatefulWidget {
 class _GalleryScreenState extends State<GalleryScreen> {
   static const String defaultAppBarTitle = 'MyGallery';
   String _appBarTitle = defaultAppBarTitle;
+  final Set<Object> _shownErrors = {};
 
   // Datenrepository, um die Galerie-Daten zu laden
   // MockDatabaseRepository(errorType: MockErrorType.none) ist im Standard bereits gesetzt
   final DatabaseRepository _repository =
-      MockDatabaseRepository(errorType: MockErrorType.none);
+      MockDatabaseRepository(errorType: MockErrorType.networkError);
 
   // Future, das die geladenen Galerie-Daten enthält
   late Future<List<GalleryItem>> _galleryData;
@@ -75,6 +76,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
   // Zentrale Methode zur Fehlerbehandlung.
   // Zeigt eine Snackbar mit einer Fehlermeldung an, abhängig vom Fehler.
   void _handleError(Object error) {
+    if (_shownErrors.contains(error)) return; // Fehler bereits behandelt
+
+    _shownErrors.add(error); // Fehler registrieren
     final message = error is SocketException
         ? 'Netzwerkfehler: Verbindung fehlgeschlagen.'
         : 'Ein Fehler ist aufgetreten: ${error.toString()}';
@@ -89,10 +93,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
       SnackBar(
         content: Text(message),
         duration: const Duration(seconds: 3),
-        action: SnackBarAction(
-          label: 'Retry',
-          onPressed: _reloadData, // Erneut laden
-        ),
       ),
     );
   }
@@ -107,7 +107,9 @@ class _GalleryScreenState extends State<GalleryScreen> {
   // entsprechend des Fehlers, der geworfen wurde
   Widget _buildErrorState(AsyncSnapshot<List<GalleryItem>> snapshot) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _handleError(snapshot.error!);
+      if (snapshot.error != null) {
+        _handleError(snapshot.error!);
+      }
     });
     return const Center(
       child: Text('Fehler beim Laden der Daten.'),
