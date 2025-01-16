@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/data/model/gallery_item.dart';
 import 'package:p_16_gallery_app/data/repositories/database_repository.dart';
@@ -14,32 +14,72 @@ class GalleryScreen extends StatefulWidget {
 }
 
 class _GalleryScreenState extends State<GalleryScreen> {
-  String _appBarTitle = 'MyGallery';
-  late final DatabaseRepository _repository;
+  static const String defaultAppBarTitle = 'MyGallery';
+  String _appBarTitle = defaultAppBarTitle;
+
+  // Datenrepository, um die Galerie-Daten zu laden
+  // MockDatabaseRepository(errorType: MockErrorType.none) ist im Standard bereits gesetzt
+  final DatabaseRepository _repository =
+      MockDatabaseRepository(errorType: MockErrorType.none);
+
+  // Future, das die geladenen Galerie-Daten enthält
   late Future<List<GalleryItem>> _galleryData;
 
   @override
   void initState() {
     super.initState();
-    // Hier kann ich im Konstruktor den Fehler setzen um es testen zu können
-    // MockDatabaseRepository(errorType: MockErrorType.none) ist im Standard schon drin
-    _repository = MockDatabaseRepository();
-    _galleryData = _repository.getGalleryItems();
+    // Daten beim Start laden
+    _galleryData = _loadData();
   }
 
-  // Diese Methode ändert den Titel der App-Leiste zwischen 'MyGallery' und 'Details' wenn das BottomSheet aufgerufen wird
+  // Lädt die Galerie-Daten aus dem Repository
+  Future<List<GalleryItem>> _loadData() async {
+    try {
+      // Daten erfolgreich laden
+      return await _repository.getGalleryItems();
+    } catch (error) {
+      // Fehler beim Laden der Daten behandeln und Snackbar anzeigen
+      _handleError(error);
+      return []; // Leere Liste zurückgeben, um Absturz zu vermeiden
+    }
+  }
+
+  // Diese Methode ändert den Titel der App-Leiste zwischen 'MyGallery' und 'Details',
+  // wenn das BottomSheet aufgerufen wird
   void _toggleAppBarTitle() {
     setState(() {
-      _appBarTitle = _appBarTitle == 'MyGallery' ? 'Details' : 'MyGallery';
+      _appBarTitle =
+          _appBarTitle == defaultAppBarTitle ? 'Details' : defaultAppBarTitle;
     });
   }
 
-  // lädt die Daten neu
+  // Lädt die Daten neu und mischt sie zufällig
   Future<void> _reloadData() async {
-    setState(() {
-      _galleryData = _repository.getGalleryItems();
-    });
-    await _galleryData;
+    try {
+      // Galerie-Daten neu laden
+      List<GalleryItem> items = await _repository.getGalleryItems();
+
+      // Daten zufällig mischen
+      items.shuffle(Random());
+
+      // Aktualisiere den Zustand mit den neuen Daten
+      setState(() {
+        _galleryData = Future.value(items);
+      });
+    } catch (error) {
+      // Fehler beim erneuten Laden behandeln
+      _handleError(error);
+    }
+  }
+
+  // Zentrale Methode zur Fehlerbehandlung.
+  // Zeigt eine Snackbar mit einer Fehlermeldung an, abhängig vom Fehler.
+  void _handleError(Object error) {
+    final message = error is SocketException
+        ? 'Netzwerkfehler: Verbindung fehlgeschlagen.'
+        : 'Ein Fehler ist aufgetreten: ${error.toString()}';
+
+    _showErrorSnackbar(message);
   }
 
   // Diese Methode zeigt eine Snackbar mit einer Fehlermeldung an.
@@ -57,29 +97,26 @@ class _GalleryScreenState extends State<GalleryScreen> {
     );
   }
 
-  // Ladezustand der Galerieansicht, zeigt den CircularProgressIndicator an so ausgelagert damit ich die build Methode schlanker halten kann
+  // Ladezustand der Galerieansicht, zeigt den CircularProgressIndicator an,
+  // so ausgelagert, damit die build-Methode schlanker bleibt
   Widget _buildLoadingState() {
     return const Center(child: CircularProgressIndicator());
   }
 
-  // Fehlerzustand der Gallery View, zeigt eine Snackbar mit der Fehlermeldung an entsprechend des Fehlers der geworfen wurde
+  // Fehlerzustand der Gallery View, zeigt eine Snackbar mit der Fehlermeldung an,
+  // entsprechend des Fehlers, der geworfen wurde
   Widget _buildErrorState(AsyncSnapshot<List<GalleryItem>> snapshot) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final error = snapshot.error;
-
-      if (error is SocketException) {
-        _showErrorSnackbar('Netzwerkfehler: Verbindung fehlgeschlagen.');
-      } else {
-        _showErrorSnackbar('Ein Fehler ist aufgetreten: ${error.toString()}');
-      }
+      _handleError(snapshot.error!);
     });
     return const Center(
       child: Text('Fehler beim Laden der Daten.'),
     );
   }
 
-  // Hier wird der leere Zustand der Gallery erstellt wenn keine Daten da sind.
-  // Zeigt dann  eine Meldung an, dass keine Daten verfügbar sind und ermöglicht es die Daten erneut zu laden.
+  // Hier wird der leere Zustand der Galerie erstellt, wenn keine Daten da sind.
+  // Zeigt dann eine Meldung an, dass keine Daten verfügbar sind,
+  // und ermöglicht es, die Daten erneut zu laden.
   Widget _buildEmptyState() {
     return RefreshIndicator(
       onRefresh: _reloadData,
@@ -99,7 +136,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
     );
   }
 
-  // Hier wird die Gallery erstellt, wenn die Daten vorhanden sind.
+  // Hier wird die Galerie erstellt, wenn die Daten vorhanden sind.
   Widget _buildGallery(List<GalleryItem> galleryData) {
     return RefreshIndicator(
       onRefresh: _reloadData,
