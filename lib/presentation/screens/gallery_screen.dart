@@ -17,6 +17,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   static const String defaultAppBarTitle = 'MyGallery';
   String _appBarTitle = defaultAppBarTitle;
   final Set<Object> _shownErrors = {};
+  bool _isGridView = false;
 
   // Datenrepository, um die Galerie-Daten zu laden
   // MockDatabaseRepository(errorType: MockErrorType.none) ist im Standard bereits gesetzt
@@ -143,12 +144,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
     return RefreshIndicator(
       onRefresh: _reloadData,
       child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: _isGridView ? 1 : 2,
           mainAxisSpacing: 8,
           crossAxisSpacing: 8,
         ),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(8),
         itemCount: galleryData.length, // Anzahl der Daten
         itemBuilder: (context, index) {
           final image = galleryData[index];
@@ -166,6 +167,19 @@ class _GalleryScreenState extends State<GalleryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_appBarTitle),
+        actions: [
+          // IconButton to toggle view
+          IconButton(
+            icon: Icon(
+              _isGridView ? Icons.view_list : Icons.grid_view,
+            ),
+            onPressed: () {
+              setState(() {
+                _isGridView = !_isGridView; // Toggle view
+              });
+            },
+          ),
+        ],
       ),
       body: FutureBuilder<List<GalleryItem>>(
         future: _galleryData,
