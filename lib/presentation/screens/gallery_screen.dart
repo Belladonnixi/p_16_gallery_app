@@ -14,18 +14,24 @@ class GalleryScreen extends StatefulWidget {
 class _GalleryScreenState extends State<GalleryScreen> {
   String _appBarTitle = 'MyGallery';
   late final DatabaseRepository _repository;
-  late Future<List<GalleryItem>> __galleryData;
+  late Future<List<GalleryItem>> _galleryData;
 
   @override
   void initState() {
     super.initState();
     _repository = MockDatabaseRepository();
-    __galleryData = _repository.getGalleryItems();
+    _galleryData = _repository.getGalleryItems();
   }
 
   void _toggleAppBarTitle() {
     setState(() {
       _appBarTitle = _appBarTitle == 'MyGallery' ? 'Details' : 'MyGallery';
+    });
+  }
+
+  Future<void> _reloadData() async {
+    setState(() {
+      _galleryData = _repository.getGalleryItems();
     });
   }
 
@@ -38,7 +44,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
         ),
       ),
       body: FutureBuilder(
-        future: __galleryData,
+        future: _galleryData,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -48,21 +54,24 @@ class _GalleryScreenState extends State<GalleryScreen> {
             return const Center(child: Text('No data available.'));
           } else {
             final galleryData = snapshot.data!;
-            return GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
+            return RefreshIndicator(
+              onRefresh: _reloadData,
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                ),
+                padding: const EdgeInsets.all(16),
+                itemCount: galleryData.length,
+                itemBuilder: (context, index) {
+                  final image = galleryData[index];
+                  return GalleryItemCard(
+                    image: image,
+                    onShowDetails: _toggleAppBarTitle,
+                  );
+                },
               ),
-              padding: const EdgeInsets.all(16),
-              itemCount: galleryData.length,
-              itemBuilder: (context, index) {
-                final image = galleryData[index];
-                return GalleryItemCard(
-                  image: image,
-                  onShowDetails: _toggleAppBarTitle,
-                );
-              },
             );
           }
         },

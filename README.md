@@ -24,12 +24,14 @@ Die Basis der Entwicklung sind die Screenshots in den bereitgestellten Slides. D
 
 - erweitert um Theming und Dark & Light Mode (dafür das ich das quasi on the run gemacht habe, gar nicht mal so schlecht, aber auch nicht sonst wie gut)
 - Bilder geändert und Daten (Dabei das ist ein guter AI task Bilder von unsplash und sich Dinge wie Titel zu den Bildern , Descriptions und Datum jeweils generieren       lassen)
-- Databserepository genutzt
+- Databserepository mit MockDatabaseRepository genutzt, Spaßeshalber mal wieder da ein Delay eingebaut
+- pull to refresh in der Gallery
 - ich bin aber im Flutter Standard geblieben und habe kein weiteres StateManagement benutzt
 - SplashScreen zugefügt
 - um named Routing erweitert
 - Flutter_gen für das generieren der Image pathes genutzt
 - und das Logo auf dem SplashScreen geht auch auf Chat GPT für so eine Aufgabe völlig ausreichend, für Production sollte man lieber entweder selbst von der Pieke auf basteln oder aber einen Graphiker oder Designer dazu holen
+- Device Orientation ist festgenagelt auf Portrait
 
 ## UI 
 
