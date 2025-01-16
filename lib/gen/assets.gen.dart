@@ -72,6 +72,10 @@ class $AssetsImagesGen {
   AssetGenImage get linusNylund =>
       const AssetGenImage('assets/images/linusNylund.jpg');
 
+  /// File path: assets/images/matteo-vistocco-ki4UgfcJfnY-unsplash.jpg
+  AssetGenImage get matteoVistoccoKi4UgfcJfnYUnsplash => const AssetGenImage(
+      'assets/images/matteo-vistocco-ki4UgfcJfnY-unsplash.jpg');
+
   /// File path: assets/images/quentinZwzeo.jpg
   AssetGenImage get quentinZwzeo =>
       const AssetGenImage('assets/images/quentinZwzeo.jpg');
@@ -121,6 +125,7 @@ class $AssetsImagesGen {
         jonathanBean,
         kimonMaritz,
         linusNylund,
+        matteoVistoccoKi4UgfcJfnYUnsplash,
         quentinZwzeo,
         rayHennessy,
         sebastianBoring,

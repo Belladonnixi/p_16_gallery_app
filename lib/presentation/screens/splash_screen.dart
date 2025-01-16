@@ -9,17 +9,17 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    _navigateToTabs();
-  }
-
   Future<void> _navigateToTabs() async {
     await Future.delayed(const Duration(seconds: 3));
     if (mounted) {
       Navigator.pushReplacementNamed(context, '/tabs');
     }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _navigateToTabs();
   }
 
   @override

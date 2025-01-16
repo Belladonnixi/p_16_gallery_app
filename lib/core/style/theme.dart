@@ -67,6 +67,13 @@ ThemeData getLightTheme() {
         ),
       ),
     ),
+    cardTheme: CardTheme(
+      elevation: 2,
+      color: NatureThemeColors.cloudyWhiteLight,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+    ),
   );
 }
 
@@ -123,6 +130,13 @@ ThemeData getDarkTheme() {
           fontSize: 16,
           fontWeight: FontWeight.w600,
         ),
+      ),
+    ),
+    cardTheme: CardTheme(
+      elevation: 0,
+      color: NatureThemeColors.charcoalDark,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
       ),
     ),
   );

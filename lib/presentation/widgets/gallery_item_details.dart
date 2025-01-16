@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p_16_gallery_app/model/gallery_item.dart';
+import 'package:p_16_gallery_app/data/model/gallery_item.dart';
 
 class GalleryItemDetails extends StatelessWidget {
   const GalleryItemDetails({

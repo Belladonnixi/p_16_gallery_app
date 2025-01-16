@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:p_16_gallery_app/model/gallery_item.dart';
+import 'package:p_16_gallery_app/data/model/gallery_item.dart';
 import 'package:p_16_gallery_app/presentation/widgets/gallery_item_details.dart';
 
 class GalleryItemCard extends StatelessWidget {
@@ -14,8 +14,6 @@ class GalleryItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
-
     return GestureDetector(
       onTap: () {
         onShowDetails();
@@ -27,7 +25,6 @@ class GalleryItemCard extends StatelessWidget {
         });
       },
       child: Card(
-        elevation: isDarkMode ? 0 : 2,
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),

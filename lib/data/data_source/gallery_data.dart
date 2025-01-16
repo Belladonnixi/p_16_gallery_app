@@ -1,5 +1,5 @@
 import 'package:p_16_gallery_app/gen/assets.gen.dart';
-import 'package:p_16_gallery_app/model/gallery_item.dart';
+import 'package:p_16_gallery_app/data/model/gallery_item.dart';
 
 final List<GalleryItem> galleryData = [
   GalleryItem(
