@@ -45,6 +45,12 @@ Und ja ich weiß konsequenter weise hätte ich die Bilder dann besser auch als u
 
 <img width="898" alt="Screenshot 2025-01-17 at 00 26 30" src="https://github.com/user-attachments/assets/872f895f-4a70-4327-8651-a87ff614e52f" />
 
+
+
+https://github.com/user-attachments/assets/69e43220-4063-457b-829c-18f1e86768f0
+
+
+
 ### DarkMode
 
 <img width="829" alt="Screenshot 2025-01-17 at 00 24 44" src="https://github.com/user-attachments/assets/3c8d8981-cb30-4724-a5f5-c3339f4ed2eb" />
