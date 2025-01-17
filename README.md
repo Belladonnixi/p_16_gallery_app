@@ -59,3 +59,5 @@ https://github.com/user-attachments/assets/69e43220-4063-457b-829c-18f1e86768f0
 ### Fazit
 Wenigstens ein kleines, ich weiß so schon wieder absolut warum ich das arbeiten mit State Management Lösungen weit mehr bevorzuge tatsächlich. Bei so etwas sehr kleinem geht es noch, aber das man auf der Ebene Logik und View in einem hat, finde ich unangenehm unübersichtlich.
 Ich baue definitiv nichts mehr ohne State Management wodurch ich einfach eine saubere Kapselung von Logig und View haben kann. Und viel größer als so möchte ich das auch nicht bauen, genau deshalb.
+
+ Ich mag so ungeplant drauf los Projekte nicht, auch dieses nicht, ich bin dann niemals damit zufrieden. Man baut alle zwei Minuten um, ich habe mir unterwegs 2 navStacks dadurch gebaut die konkurriert haben am Ende. Ich mag dieses Projekt nicht.
