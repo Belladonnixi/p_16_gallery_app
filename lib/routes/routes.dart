@@ -11,20 +11,61 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return _buildPageRoute(const SplashScreen(), settings);
       case '/tabs':
-        return MaterialPageRoute(builder: (_) => const TabsScreen());
+        return _buildPageRoute(const TabsScreen(), settings);
       case '/gallery':
-        return MaterialPageRoute(builder: (_) => const GalleryScreen());
+        return _buildPageRoute(const GalleryScreen(), settings);
       case '/about_me':
-        return MaterialPageRoute(builder: (_) => const AboutMeScreen());
+        return _buildPageRoute(const AboutMeScreen(), settings);
       case '/details':
         final item = settings.arguments as GalleryItem;
-        return MaterialPageRoute(
-          builder: (_) => GalleryItemDetails(item: item),
-        );
+        return _buildDetailsPageRoute(GalleryItemDetails(item: item), settings);
       default:
-        return MaterialPageRoute(builder: (_) => const NotFoundScreen());
+        return _buildPageRoute(const NotFoundScreen(), settings);
     }
+  }
+
+  static PageRouteBuilder _buildPageRoute(Widget page, RouteSettings settings) {
+    return PageRouteBuilder(
+      settings: settings,
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
+    );
+  }
+
+  static PageRouteBuilder _buildDetailsPageRoute(
+      Widget page, RouteSettings settings) {
+    return PageRouteBuilder(
+      settings: settings,
+      pageBuilder: (context, animation, secondaryAnimation) => page,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0.0, 1.0);
+        const end = Offset.zero;
+        const curve = Curves.easeInOut;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var offsetAnimation = animation.drive(tween);
+
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
+    );
   }
 }
