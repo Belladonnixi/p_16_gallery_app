@@ -14,6 +14,9 @@ class GalleryItemDetails extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(item.imageTitle),
+      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -50,9 +53,9 @@ class GalleryItemDetails extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 48),
+            const SizedBox(height: 56),
             Align(
-              alignment: Alignment.center,
+              alignment: Alignment.bottomCenter,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
@@ -63,7 +66,7 @@ class GalleryItemDetails extends StatelessWidget {
                 child: const Text('Schließen'),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 24),
           ],
         ),
       ),

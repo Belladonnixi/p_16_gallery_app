@@ -46,15 +46,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
     }
   }
 
-  // Diese Methode ändert den Titel der App-Leiste zwischen 'MyGallery' und 'Details',
-  // wenn das BottomSheet aufgerufen wird
-  void _toggleAppBarTitle() {
-    setState(() {
-      _appBarTitle =
-          _appBarTitle == defaultAppBarTitle ? 'Details' : defaultAppBarTitle;
-    });
-  }
-
   // Lädt die Daten neu und mischt sie zufällig
   Future<void> _reloadData() async {
     try {
@@ -155,7 +146,6 @@ class _GalleryScreenState extends State<GalleryScreen> {
           final image = galleryData[index];
           return GalleryItemCard(
             image: image,
-            onShowDetails: _toggleAppBarTitle,
           );
         },
       ),
