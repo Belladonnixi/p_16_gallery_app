@@ -132,27 +132,47 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget _buildGallery(List<GalleryItem> galleryData) {
     return RefreshIndicator(
       onRefresh: _reloadData,
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: _isGridView ? 1 : 2,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-        ),
-        padding: const EdgeInsets.all(8),
-        itemCount: galleryData.length, // Anzahl der Daten
-        itemBuilder: (context, index) {
-          final image = galleryData[index];
-          return GalleryItemCard(
-            image: image,
-            onTapNavigate: () {
-              Navigator.of(context).pushNamed(
-                '/details',
-                arguments: image,
-              );
-            },
-          );
-        },
-      ),
+      child: _isGridView
+          ? ListView.builder(
+              padding: const EdgeInsets.all(8),
+              itemCount: galleryData.length, // Anzahl der Daten
+              itemBuilder: (context, index) {
+                final image = galleryData[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: GalleryItemCard(
+                    image: image,
+                    onTapNavigate: () {
+                      Navigator.of(context).pushNamed(
+                        '/details',
+                        arguments: image,
+                      );
+                    },
+                  ),
+                );
+              },
+            )
+          : GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Feste Spaltenanzahl für das Raster
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+              ),
+              padding: const EdgeInsets.all(8),
+              itemCount: galleryData.length, // Anzahl der Daten
+              itemBuilder: (context, index) {
+                final image = galleryData[index];
+                return GalleryItemCard(
+                  image: image,
+                  onTapNavigate: () {
+                    Navigator.of(context).pushNamed(
+                      '/details',
+                      arguments: image,
+                    );
+                  },
+                );
+              },
+            ),
     );
   }
 
