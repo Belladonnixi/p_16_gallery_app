@@ -40,6 +40,7 @@ Und ja ich weiß konsequenter weise hätte ich die Bilder dann besser auch als u
 - und das Logo auf dem SplashScreen geht auch auf Chat GPT für so eine Aufgabe völlig ausreichend, für Production sollte man lieber entweder selbst von der Pieke auf basteln oder aber einen Graphiker oder Designer dazu holen
 - Device Orientation ist festgenagelt auf Portrait
 - Favoriten Screen mit swipe to left um Favoriten wieder zu löschen und dort kann man auch auf die Detailsseite gehen, auf der Detailsseite kann man über einen Icon Button auch den Status ändern
+- snackbars um den User nochmal zu informieren das etwas favorisiert oder unfavorisiert wurde
 
 ## UI 
 
