@@ -1,4 +1,4 @@
-# P16 Gallery App
+# Gallery App
 
 ## Ziel
 
@@ -32,32 +32,24 @@ Und ja ich weiß konsequenter weise hätte ich die Bilder dann besser auch als u
 - Databserepository mit MockDatabaseRepository genutzt, Spaßeshalber mal wieder da ein Delay eingebaut
 - Fehlerzustände beim Laden der Daten getestet (manuell) dafür aber entsprechend das MockDatabaseRepository dafür angepasst und auch den Gallery Screen
 - pull to refresh in der Gallery
+- das pull to refresh sorgt auch für einen shuffle der Bilder
 - ich bin aber im Flutter Standard geblieben und habe kein weiteres StateManagement benutzt
 - SplashScreen zugefügt
 - um named Routing erweitert
 - Flutter_gen für das generieren der Image pathes genutzt
 - und das Logo auf dem SplashScreen geht auch auf Chat GPT für so eine Aufgabe völlig ausreichend, für Production sollte man lieber entweder selbst von der Pieke auf basteln oder aber einen Graphiker oder Designer dazu holen
 - Device Orientation ist festgenagelt auf Portrait
-- Favoriten Screen
+- Favoriten Screen mit swipe to left um Favoriten wieder zu löschen und dort kann man auch auf die Detailsseite gehen, auf der Detailsseite kann man über einen Icon Button auch den Status ändern
 
 ## UI 
 
 ### LightMode:
 
-<img width="898" alt="Screenshot 2025-01-17 at 00 26 30" src="https://github.com/user-attachments/assets/872f895f-4a70-4327-8651-a87ff614e52f" />
-
-
-
-https://github.com/user-attachments/assets/69e43220-4063-457b-829c-18f1e86768f0
-
+![Screenshot 2025-01-18 at 21 30 19](https://github.com/user-attachments/assets/88184ee8-e795-46d8-a8b9-9cc2134de052)
 
 
 ### DarkMode
 
-<img width="829" alt="Screenshot 2025-01-17 at 00 24 44" src="https://github.com/user-attachments/assets/3c8d8981-cb30-4724-a5f5-c3339f4ed2eb" />
+![Screenshot 2025-01-18 at 21 35 27](https://github.com/user-attachments/assets/b6a0cbf4-7028-4648-ba57-067a908a33e0)
 
-
-### Fazit
-Wenigstens ein kleines, ich weiß so schon wieder absolut warum ich das arbeiten mit State Management Lösungen weit mehr bevorzuge tatsächlich. Bei so etwas sehr kleinem geht es noch, aber das man auf der Ebene Logik und View in einem hat, finde ich unangenehm unübersichtlich.
-Ich baue definitiv nichts mehr ohne State Management wodurch ich einfach eine saubere Kapselung von Logig und View haben kann. Und viel größer als so möchte ich das auch nicht bauen, genau deshalb.
 
