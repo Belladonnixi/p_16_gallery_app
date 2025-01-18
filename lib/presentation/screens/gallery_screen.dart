@@ -144,6 +144,12 @@ class _GalleryScreenState extends State<GalleryScreen> {
           final image = galleryData[index];
           return GalleryItemCard(
             image: image,
+            onTapNavigate: () {
+              Navigator.of(context).pushNamed(
+                '/details',
+                arguments: image,
+              );
+            },
           );
         },
       ),

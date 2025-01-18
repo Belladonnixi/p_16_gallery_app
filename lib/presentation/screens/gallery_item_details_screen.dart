@@ -33,11 +33,12 @@ class GalleryItemDetailsScreen extends StatelessWidget {
                     3 /
                     5, // Maximal 60 % der Gesamthöhe des Bildschirms
               ),
+              // Auf das Bild greife ich direkt über den Flutter gen ImageProvider zu.
               child: item.imagePath.image(
-                fit: BoxFit
-                    .cover, // Ich lasse das Bild den gesamten Platz füllen.
-                width: double
-                    .infinity, // Das Bild wird über die gesamte Breite des Containers angezeigt.
+                // Ich lasse das Bild den gesamten Platz füllen.
+                fit: BoxFit.cover,
+                // Das Bild wird über die gesamte Breite des Containers angezeigt.
+                width: double.infinity,
               ),
             ),
             Padding(

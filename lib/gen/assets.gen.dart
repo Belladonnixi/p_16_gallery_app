@@ -84,6 +84,10 @@ class $AssetsImagesGen {
   AssetGenImage get rayHennessy =>
       const AssetGenImage('assets/images/rayHennessy.jpg');
 
+  /// File path: assets/images/sadHamster.jpg
+  AssetGenImage get sadHamster =>
+      const AssetGenImage('assets/images/sadHamster.jpg');
+
   /// File path: assets/images/sebastianBoring.jpg
   AssetGenImage get sebastianBoring =>
       const AssetGenImage('assets/images/sebastianBoring.jpg');
@@ -128,6 +132,7 @@ class $AssetsImagesGen {
         matteoVistoccoKi4UgfcJfnYUnsplash,
         quentinZwzeo,
         rayHennessy,
+        sadHamster,
         sebastianBoring,
         shifaazShamoon,
         simonBerger,

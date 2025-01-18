@@ -24,6 +24,7 @@ class MockDatabaseRepository implements DatabaseRepository {
   MockErrorType errorType = MockErrorType.none;
 
   // Set statt List, da es keine doppelten Elemente enthalten kann
+  // Dart Dokumentation: https://api.dart.dev/stable/2.14.4/dart-core/Set-class.html
   final Set<GalleryItem> _favorites = {};
 
   @override

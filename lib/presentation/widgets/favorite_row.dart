@@ -15,6 +15,7 @@ class FavoriteDetailsTitleRow extends StatefulWidget {
       _FavoriteDetailsTitleRowState();
 }
 
+// das Mixin SingleTickerProviderStateMixin wird benötigt, um Animationen zu steuern
 class _FavoriteDetailsTitleRowState extends State<FavoriteDetailsTitleRow>
     with SingleTickerProviderStateMixin {
   late bool _isFavorite; // Direkte Zustandsvariable für Favoritenstatus

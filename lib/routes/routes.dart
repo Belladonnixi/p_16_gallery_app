@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/data/model/gallery_item.dart';
 import 'package:p_16_gallery_app/presentation/screens/about_me_screen.dart';
+import 'package:p_16_gallery_app/presentation/screens/favorite_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/gallery_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/splash_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/tabs_screen.dart';
@@ -22,6 +23,8 @@ class RouteGenerator {
         final item = settings.arguments as GalleryItem;
         return _buildDetailsPageRoute(
             GalleryItemDetailsScreen(item: item), settings);
+      case '/favorite':
+        return _buildPageRoute(const FavoritesScreen(), settings);
       default:
         return _buildPageRoute(const NotFoundScreen(), settings);
     }

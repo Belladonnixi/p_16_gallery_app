@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:p_16_gallery_app/presentation/screens/about_me_screen.dart';
+import 'package:p_16_gallery_app/presentation/screens/favorite_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/gallery_screen.dart';
 
 class TabsScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _TabsScreenState extends State<TabsScreen> {
 
   final List<Widget> _screens = [
     const GalleryScreen(),
+    const FavoritesScreen(),
     const AboutMeScreen(),
   ];
 
@@ -35,6 +37,11 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.photo_outlined),
             activeIcon: Icon(Icons.photo),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.star_border),
+            activeIcon: Icon(Icons.star),
             label: '',
           ),
           BottomNavigationBarItem(
