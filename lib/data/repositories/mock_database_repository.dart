@@ -23,6 +23,9 @@ class MockDatabaseRepository implements DatabaseRepository {
 
   MockErrorType errorType = MockErrorType.none;
 
+  // Set statt List, da es keine doppelten Elemente enthalten kann
+  final Set<GalleryItem> _favorites = {};
+
   @override
   Future<List<GalleryItem>> getGalleryItems() async {
     // künstliche Verzögerung um Ladeanimation zu zeigen
@@ -39,5 +42,23 @@ class MockDatabaseRepository implements DatabaseRepository {
       case MockErrorType.unknownError:
         throw Exception('Ein unbekannter Fehler ist aufgetreten');
     }
+  }
+
+  @override
+  Future<void> addFavorite(GalleryItem item) async {
+    await Future.delayed(const Duration(milliseconds: 100)); // Optional
+    _favorites.add(item);
+  }
+
+  @override
+  Future<void> removeFavorite(GalleryItem item) async {
+    await Future.delayed(const Duration(milliseconds: 100)); // Optional
+    _favorites.remove(item);
+  }
+
+  @override
+  Future<List<GalleryItem>> getFavorites() async {
+    await Future.delayed(const Duration(milliseconds: 200)); // Optional
+    return _favorites.toList();
   }
 }

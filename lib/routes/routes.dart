@@ -4,7 +4,7 @@ import 'package:p_16_gallery_app/presentation/screens/about_me_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/gallery_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/splash_screen.dart';
 import 'package:p_16_gallery_app/presentation/screens/tabs_screen.dart';
-import 'package:p_16_gallery_app/presentation/widgets/gallery_item_details.dart';
+import 'package:p_16_gallery_app/presentation/screens/gallery_item_details_screen.dart';
 import 'package:p_16_gallery_app/routes/not_found.dart';
 
 class RouteGenerator {
@@ -20,7 +20,8 @@ class RouteGenerator {
         return _buildPageRoute(const AboutMeScreen(), settings);
       case '/details':
         final item = settings.arguments as GalleryItem;
-        return _buildDetailsPageRoute(GalleryItemDetails(item: item), settings);
+        return _buildDetailsPageRoute(
+            GalleryItemDetailsScreen(item: item), settings);
       default:
         return _buildPageRoute(const NotFoundScreen(), settings);
     }
