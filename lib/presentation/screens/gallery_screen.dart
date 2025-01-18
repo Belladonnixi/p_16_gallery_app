@@ -14,8 +14,6 @@ class GalleryScreen extends StatefulWidget {
 }
 
 class _GalleryScreenState extends State<GalleryScreen> {
-  static const String defaultAppBarTitle = 'MyGallery';
-  String _appBarTitle = defaultAppBarTitle;
   final Set<Object> _shownErrors = {};
   bool _isGridView = false;
 
@@ -156,7 +154,7 @@ class _GalleryScreenState extends State<GalleryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_appBarTitle),
+        title: Text('MyGallery'),
         actions: [
           // IconButton to toggle view
           IconButton(
