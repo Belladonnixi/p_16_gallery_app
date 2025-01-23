@@ -1,1 +1,4 @@
 include: package:flutter_lints/flutter.yaml
+analyzer:
+  errors:
+    slash_for_doc_comments: ignore ignore
